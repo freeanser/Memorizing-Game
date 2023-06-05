@@ -1,0 +1,128 @@
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  flex: 0 1 7%;
+  /* flex-grow、flex-shrink、flex-basis */
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+.back {
+  background: url("https://images.pexels.com/photos/2344227/pexels-photo-2344227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+@media screen and (max-width: 450px) {
+  .card p {
+    font-size: 5px;
+  }
+}
+
+/* 在寬度介於 601px 到 1200px 之間的螢幕上，文字大小為 16px */
+@media screen and (min-width: 451px) and (max-width: 600px) {
+  .card p {
+    font-size: 10px;
+  }
+}
+
+.card p {
+  margin: 3px;
+  /*   font-size: 10px; */
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 95%;
+  margin: 0;
+}
+
+#header .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  padding-right: 10px;
+  max-width: 8%;
+}
+
+#header .title h2 {}
+
+#header .score {
+  margin: 0px;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin: 0px;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-timing-function: ease;
+  animation-duration: 0.2s;
+  animation-iteration-count: 3;
+}
+
+@keyframes wrongAnimation {
+  25% {
+    border: 2px solid #fffff2;
+  }
+
+  50% {
+    border: 2px solid #ffffb5;
+  }
+
+  75% {
+    border: 2px solid #ffb5b5;
+  }
+
+  100% {
+    border: 2px solid #ffffb5;
+  }
+}
+
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33%;
+  width: 100%;
+  background-color: #d4ffff50;
+}
+
+.completed p {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.completed p:first-child {
+  color: #d6d6ff;
+  font-size: 30px;
+  margin: 15px;
+}
